@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<br><p id = "strict"></p><br>
+
+<button onclick="notStrict()" > Not Strict</button>
+<br><br>
+
+<script>
+function notStrict()
+	{
+	"use strict";
+		var a = "This is not in strict mode";
+		
+		b = "This is in strict mode";
+		
+		document.getElementById('strict').InnerHtml = a + "<br />" + b;
+	}
+	
+	
+	
+</script>
+</body>
+</html>

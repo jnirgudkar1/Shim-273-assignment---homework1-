@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contect-Type" content="text/html" charset="ISO-8859-1">
+<script type="text/javascript" src="Object1.js"> </script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<button onclick="NewGuitar()">Create a new Guitar</input>
+<script type="text/javascript">
+
+function NewGuitar()
+{
+	var guitar = new Guitar('Acoustic','Les Paul');
+	guitar.color = "Black";
+	alert(guitar.getInfo());
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contect-Type" content="text/html" charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<H1> Farenheit to Celcius converter</H1><br>
+Please enter the temperature in Farenheit <input type="text" id="temp">
+<button onclick="Convert()" > Convert</button>
+<p id="answer"></p>
+<script>
+function Convert()
+{
+	var celcius = 0;
+	var value = document.getElementById('temp').value;
+	parseFloat(value);
+	try
+	{
+		celcius = (value-32)*5/9;	
+	}
+	catch(e)
+	{
+		alert(e.message);
+	}
+	
+	document.getElementById("answer").innerHTML = Math.round(celcius);
+}
+</script>
+</body>
+</html>

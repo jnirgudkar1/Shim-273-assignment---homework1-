@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contect-Type" content="text/html" charset="ISO-8859-1">
+
+<title>Insert title here</title>
+</head>
+<body>
+Please enter a valit E-mail address:- <input type="text" id="email" />
+<button onclick="Submit()" > Submit </button>
+<p id="result"></p>
+<script>
+	function Submit()
+	{
+		var text = document.getElementById('email').value;
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    var ans = re.test(text);
+		if(ans)
+		{
+			alert("The email id is valid");
+		}
+		else
+		{
+			alert("The email id is not valid");	
+		}
+	}
+</script>
+</body>
+</html>

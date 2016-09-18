@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contect-Type" content="text/html" charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+Enter a number that completely divides 100.
+
+<input id="input" type="text">
+<button type="button" onclick="CheckError()">Check for errors</button>
+<p id="message"></p>
+<script>
+function CheckError()
+{
+    var message, input;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    input = document.getElementById("input").value;
+    try 
+    {
+    	if((100%input) == 0)
+    	{
+    		throw  "Correct!";
+    	}
+    	else
+    	{
+    		var remainder = 100%input;
+    		throw "Wrong!. The remainder is: "+ ' ' + 100%input;
+    	}
+    }
+    catch(err) 
+    {
+        message.innerHTML = "Input is: " + err;
+    }
+}
+</script>
+
+</body>
+</html>

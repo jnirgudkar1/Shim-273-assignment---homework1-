@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<button onclick="Call()"> Click to hear what a bird says.</button>
+<p id = "Function" ></p>
+<script>
+	function Call()
+	{
+		var bird = chirp();
+		document.getElementById('Function').innerHTML = "A bird " + bird;
+	}
+	
+	function chirp()
+	{
+		return "Chirps";
+	}
+</script>
+</body>
+</html>

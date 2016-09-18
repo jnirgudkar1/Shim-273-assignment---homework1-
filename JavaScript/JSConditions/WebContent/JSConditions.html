@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contect-Type" content="text/html" charset="ISO-8859-1">
+<script type="text/javascript" src="JSConditions.js"> </script>
+<title>Insert title here</title>
+<script>
+	var value1 = "";
+	var value2 = "";
+	var name = "";
+	
+	function InputName()
+	{
+		name = document.getElementById('input').value;
+	}
+	
+	function myJsFunction()
+	{
+		var text=document.getElementById('input1').value;
+		
+		if(text == "Yes")
+		{
+			document.getElementById("p1").innerHTML = "Great";
+			value1="You know what 'Conditions' are";
+		}
+		else
+		{
+			document.getElementById("p1").innerHTML = "Ok";
+			value1="You dont know what conditions are";
+		}
+	}
+	
+	function ShowExample()
+	{
+		var text=document.getElementById('input2').value;
+		if(text == "Yes")
+		{
+			document.getElementById("p2").innerHTML = "If(*condition* == true) // perform a certain action";
+			value2 = "You saw an example";
+		}
+		if(text == "No")
+		{
+			document.getElementById("p2").innerHTML = "Ok. You can continue";
+			value2 = "You chose not to see an example";
+		}
+	}
+	
+	
+	function switchcase()
+	{
+		var expression = document.getElementById('input3').value;
+	
+		switch(expression)
+		{
+		    case 1:
+		    	document.getElementById("finalResult").innerHTML = value1;
+		        break;
+		    case 2:
+		    	document.getElementById("finalResult").innerHTML = value2;
+		        break;
+		}
+	}
+	
+
+</script>
+</head>
+<body>
+
+What is your name?
+<input type="text" id="input" />
+<button onclick="InputName()" > Submit </button>
+<p id="p"></p>
+
+<br><br>
+Do you know what conditions are?
+<input type="text" id="input1" />
+<button onclick="myJsFunction()" > Submit </button>
+<p id = "p1"></p>
+<br><br>
+
+Do you want to see an example?
+<input type="text" id="input2" />
+<button onclick="ShowExample()"> Submit </button>
+
+<p id = "p2"></p>
+<br><br>
+
+Which of the questions above would you like to see your result to?
+<input type="text" id="input3" />
+
+
+<br><br>
+<button onclick="switchcase()" > See final result</button>
+<p id="finalResult"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<H1> This is an example of Inheritance in Javascript </H1><br>
+<p id = "cow"></p>
+<br><br>
+<p id = "calf"></p>
+<br><br>
+<button onclick="Submit()" > Submit </button>
+
+<script>
+	var ClassCow = function()
+	{
+		this.name = "cow";
+	}
+	
+	ClassCow.prototype.print = function()
+	{
+		document.getElementById("cow").innerHTML = this.name;
+	}
+	
+	var inheritsFrom = function (child, parent) {
+	    child.prototype = Object.create(parent.prototype);
+	};
+	
+	var ClassCalf = function() {
+	    this.name = "calf";
+	    this.surname = "I'm the child";
+	}
+	
+	ClassCalf.prototype.print = function() {
+	    ClassCow.prototype.print.call(this);
+	    document.getElementById("calf").innerHTML = this.surname;
+	}
+
+	inheritsFrom(ClassCalf, ClassCow);
+	
+	function Submit()
+	{
+		var a = new ClassCow;
+		a.print();
+		
+		//var b = new ClassCalf;
+		//b.print();
+	}
+</script>
+</body>
+</html>

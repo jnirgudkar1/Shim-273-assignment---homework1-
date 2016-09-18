@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Guitars prices and their types</h2>
+<p>Guitars &nbsp;&nbsp;&nbsp;&nbsp; Cost &nbsp;&nbsp;&nbsp;&nbsp; Type</p>
+<p id="output"></p>
+<script>
+var text = '{"Guitars":[' +
+'{"Name":"Les Paul","Cost":"$1200","Type":"Electric" },' +
+'{"Name":"Yamaha","Cost":"$400","Type":"Acoustic" },' +
+'{"Name":"Fender","Cost":"$800","Type":"Electric" },' +
+'{"Name":"B.C Rich","Cost":"$500","Type":"Acoustic" }]}';
+
+obj = JSON.parse(text);
+
+for(i=0;i<4;i++)
+{
+	document.getElementById("output").innerHTML +=
+	obj.Guitars[i].Name + "&nbsp;&nbsp;&nbsp;&nbsp;" + obj.Guitars[i].Cost +
+	"&nbsp;&nbsp;&nbsp;&nbsp;" + obj.Guitars[i].Type + "<br>";
+}
+</script>
+</body>
+</html>
