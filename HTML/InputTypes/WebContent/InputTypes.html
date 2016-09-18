@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<H1>Guitar Center registration form</H1>
+<form id = "Guitar-Registration">
+First Name: <input type="text" id="fname"><br>
+Last Name: <input type="text" id="lname"><br><br>
+Type: 
+<input type="radio" name="handed" value="Left Handed" checked="checked">Left Handed</input>
+<input type="radio" name="handed" value="Right Handed">Right Handed</input><br><br>
+Which type of guitar are you interested in?<br>
+<input type="checkbox" name="GuitarType" value="Acoustic">Acoustic<br>
+<input type="checkbox" name="GuitarType" value="Electric">Electric<br>
+<input type="checkbox" name="GuitarType" value="Semi">Semi<br><br>
+<button type="submit">Go</button>
+</form>
+Information Provided:
+<p id = "Submitted"></p>
+<script>
+var form = document.getElementById('Guitar-Registration');
+if (form.attachEvent) 
+{
+    form.attachEvent("submit", processForm);
+}
+else
+{
+    form.addEventListener("submit", processForm);
+}
+
+function processForm(e)
+{
+	if (e.preventDefault) 
+	{
+		e.preventDefault();
+	}
+	var fname = document.getElementById('fname').value;
+	var lname = document.getElementById('lname').value;
+	var hand;
+	var type = " ";
+	var radios = document.getElementsByName('handed');
+	for (var i = 0; i < radios.length; i++)
+	{
+		if(radios[i].checked)
+		{
+			hand = radios[i].value;
+		}
+	}
+	var checkboxes = document.getElementsByName('GuitarType');
+	for(var i = 0; i < checkboxes.length; i++)
+	{
+		if(checkboxes[i].checked)
+		{
+			type += checkboxes[i].value + " ";
+		}
+	}
+	document.getElementById("Submitted").innerHTML = fname + " " + lname + "<br />"+ hand +"<br />" + type;
+	return false;
+}
+
+</script>
+</body>
+</html>

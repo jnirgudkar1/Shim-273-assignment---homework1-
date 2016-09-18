@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+<H1>Caste a vote!.</H1>
+<p>Pick the name of the movie you would like to see at the college movie night</p><br>
+<p>Inception</p>
+<p><button onclick="clickInception()" type="button">Click me!</button></p>
+<div id="InceptionResult"></div><br><br>
+<p>Jungle Book</p>
+<p><button onclick="clickJungle()" type="button">Click me!</button></p>
+<div id="JungleResult"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+<script>
+function clickInception() 
+{
+    if(typeof(Storage) !== "undefined") 
+    {
+        if (localStorage.clickcount) 
+        {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } 
+        else 
+        {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("InceptionResult").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    }
+    else
+    {
+        document.getElementById("InceptionResult").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function clickJungle() 
+{
+    if(typeof(Storage) !== "undefined") 
+    {
+        if (localStorage.count) 
+        {
+            localStorage.count = Number(localStorage.count)+1;
+        } 
+        else 
+        {
+            localStorage.count = 1;
+        }
+        document.getElementById("JungleResult").innerHTML = "You have clicked the button " + localStorage.count + " time(s).";
+    }
+    else
+    {
+        document.getElementById("JungleResult").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</body>
+</html>
